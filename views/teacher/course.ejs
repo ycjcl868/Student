@@ -1,0 +1,59 @@
+<%- include('header') -%>
+
+  <div class="main-block">
+    <div class="panel panel-default" id="panel">
+       <div class="panel-heading">
+          <h3 class="panel-title"><i class="fa fa-anchor"></i>所教课程</h3>
+        </div>
+        <div class="panel-body">
+        	<% for(var i = 0; i < course.data.length; i++){ %>
+        	<a class="label label-info" href="/teacher/course/<%= course.data[i].courseID%>"><%= course.data[i].courseName%></a>
+        	<% } %>
+
+        </div>       
+
+
+        <div class="panel-heading">
+          <h3 class="panel-title"><i class="fa fa-graduation-cap"></i>选修<strong><%= student.data[0].courseName%></strong>课程的学生</h3>
+        </div>
+        <input type="hidden" id="courseID" value="<%= student.data[0].courseID%>">
+        <div class="panel-body">
+			<table class="table table-hover course-table table-striped">
+		      <thead>
+		        <tr>
+		          <th>学生学号</th>
+		          <th>学生姓名</th>
+		          <th>专业</th>
+		          <th>分数</th>
+		          <th>操作</th>
+		        </tr>
+		      </thead>
+		      <tbody id="tbody">
+		      <% for(var i = 0; i < student.data.length;i++) { %>
+		      	<tr>
+		      		<th><%= student.data[i].studentID %></th>
+		      		<td><%= student.data[i].studentName %></td>
+		      		<td><%= student.data[i].major %></td>
+		      		<td><% if(student.data[i].grade>0) { %><%=student.data[i].grade%><% }else{ %><input type="number" class="grade"><% } %></td>
+		      		<td>
+		      		<% if(student.data[i].grade>0) { %><button type="button" class="btn btn-danger" disabled="disabled">已保存</button><% }else{ %><button type="button" class="btn btn-primary addgrade-btn">确认保存</button><% } %>
+		      		
+		      		</td>
+		      	</tr>
+		      <% } %>
+		      </tbody>
+		    </table>
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+<%- include('footer') -%>
+
+
+

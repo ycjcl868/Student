@@ -1,0 +1,43 @@
+<%- include('header') -%>
+  <div class="main-block">
+    <div class="panel panel-default" id="panel">
+       <div class="panel-heading">
+          <h3 class="panel-title"><i class="fa fa-anchor"></i>学号</h3>
+        </div>
+        <div class="panel-body">
+          <%= data.data[0].studentID%>
+        </div>       
+
+
+        <div class="panel-heading">
+          <h3 class="panel-title"><i class="fa fa-birthday-cake"></i>生日</h3>
+        </div>
+        <div class="panel-body">
+          <%= data.data[0].birthday%>
+        </div>
+
+        <div class="panel-heading">
+          <h3 class="panel-title"><i class="fa fa-graduation-cap"></i>专业</h3>
+        </div>
+        <div class="panel-body">
+          <%= data.data[0].major%>
+        </div>
+
+        <div class="panel-heading">
+          <h3 class="panel-title"><i class="fa fa-line-chart"></i>成绩分析</h3>
+        </div>
+        <div class="panel-body">
+          <div id="chartContainer"></div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+
+   <script type="text/javascript" src='/bower_components/canvasjs/canvasjs.min.js'></script>
+
+<%- include('footer') -%>
+
+

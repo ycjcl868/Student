@@ -1,0 +1,43 @@
+<%- include('header') -%>
+
+  <div class="main-block">
+
+<table class="table table-hover table-striped">
+      <thead>
+        <tr>
+          <th>课程号</th>
+          <th>课程名</th>
+          <th>授课教师</th>
+          <th>教师职位</th>
+          <th>课程学分</th>
+          <th>成绩</th>
+        </tr>
+      </thead>
+      <tbody>
+
+
+<% for(var i = 0; i < data.status; i++){  %>
+
+	     <tr>
+          <th scope="row"><%=data.data[i].courseID%></th>
+          <td><%=data.data[i].courseName%></td>
+          <td><%=data.data[i].teacherName%></td>
+          <td><%=data.data[i].jobTitle%></td>
+          <td><%=data.data[i].credit%></td>
+          <td><% if(data.data[i].grade != 0){ %><%=data.data[i].grade%><% }else{ %>未录入成绩<% } %></td>
+        </tr>
+
+<%	} %>
+
+
+
+
+ 
+
+      </tbody>
+    </table>  
+</div>
+
+<%- include('footer') -%>
+
+

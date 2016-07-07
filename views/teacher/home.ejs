@@ -1,0 +1,41 @@
+
+<%- include('header') -%>
+
+  <div class="main-block">
+    <div class="panel panel-default" id="panel">
+       <div class="panel-heading">
+          <h3 class="panel-title"><i class="fa fa-anchor"></i>教工号</h3>
+        </div>
+        <div class="panel-body">
+        	<%= data.data[0].teacherID%>
+        </div>       
+
+
+        <div class="panel-heading">
+          <h3 class="panel-title"><i class="fa fa-flag"></i>职称</h3>
+        </div>
+        <div class="panel-body">
+        	<%= data.data[0].jobTitle%>
+        </div>
+
+        <div class="panel-heading">
+          <h3 class="panel-title"><i class="fa fa-graduation-cap"></i>教学科目</h3>
+        </div>
+        <div class="panel-body">
+        	<% for(var i = 0; i < data.data.length; i++){ %>
+				<span class="label label-primary"><%= data.data[i].courseName %></span>
+        	<% } %>
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+<%- include('footer') -%>
+
+
+

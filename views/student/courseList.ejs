@@ -1,0 +1,44 @@
+<%- include('header') -%>
+
+  <div class="main-block">
+<table class="table table-hover course-table table-striped">
+      <thead>
+        <tr>
+          <th>课程号</th>
+          <th>课程名</th>
+          <th>授课教师</th>
+          <th>课程学分</th>
+          <th>开课时间</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody id="tbody">
+
+
+<% for(var i = 0; i < data.status; i++){  %>
+
+	     <tr>
+          <th scope="row" class="courseID"><%=data.data[i].courseID%></th>
+          <td><%=data.data[i].courseName%></td>
+          <td><%=data.data[i].teacherName%></td>
+          <td><%=data.data[i].credit%></td>
+          <td><%=data.data[i].date%></td>
+          <td><button type="button" class="btn btn-primary">选课</button></td>
+        </tr>
+
+<%	} %>
+
+
+
+
+ 
+
+      </tbody>
+    </table>  
+</div>
+
+<script type="text/javascript" src='/bower_components/layer/mobile/layer.m.js'></script>
+
+<%- include('footer') -%>
+
+

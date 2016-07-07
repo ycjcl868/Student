@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>教师主页</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <link rel='stylesheet' href='/css/common.css' />
+    <link rel='stylesheet' href='/css/teacher.css' />
+    <link rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.min.css' />
+    <link rel='stylesheet' href='/bower_components/font-awesome/css/font-awesome.min.css' />
+  </head>
+  <body>
+  
+  <!-- header部分 Start -->
+  <header class="ky-header container-fluid">
+    <div class="row">
+      <div class="title">
+        <a href="">教师管理中心</a>
+    
+      </div>
+      <div class="info">
+        <div class="name pull-right">
+          <p>
+            <img src="/images/avatar.png" alt="">
+            <span><%= name %>教师</span>
+            <a href="/loginout">(登出)</a>
+          </p>  
+        </div>
+        <button type="button" class="navbar-toggle collapsed" id="toggle-left" data-target="#navbar"  data-status="hide" >
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>           
+      </div>
+    </div>
+  </header>
+  <!-- header部分 End  -->
+  <div class="main">
+    <aside class="menu" id="navbar">
+      <div id="leftside-navigation">
+        <ul class="nano-content">
+          <li class="<%if(page == 'home') {%>active<%}else{%>sub-menu<%}%>">
+              <a href="/teacher"><i class="fa fa-dashboard"></i><span>我的信息</span></a>            
+          </li>
+          <li class="<%if(page == 'course') {%>active<%}else{%>sub-menu<%}%>">
+              <a href="/teacher/course"><i class="fa fa-book"></i><span>我的课程</span></a>            
+          </li>    
+          <li class="<%if(page == 'editpass') {%>active<%}else{%>sub-menu<%}%>">
+              <a href="/teacher/editpass"><i class="fa fa-pencil-square-o"></i><span>修改密码</span></a>            
+          </li>
+        </ul>
+      </div>
+    </aside>  

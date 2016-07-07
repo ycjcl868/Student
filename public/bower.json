@@ -1,0 +1,11 @@
+{
+  "name": "studentManage",
+  "version": "0.0.1",
+  "dependencies": {
+    "jquery": "~1.10.2",
+    "bootstrap": "^3.3.6",
+    "layer": "*",
+    "font-awesome": "^4.6.3"
+  },
+  "private": true
+}
