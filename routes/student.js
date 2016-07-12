@@ -12,6 +12,7 @@ var moment = require('moment');
  */
 router.get('/',common.isLogin,function(req,res,next){
 	//学生ID:studentID
+	console.log(2);
 	common.isStudent(req,res,next,function(){
 		// console.log("req.session.userID:"+req.session.userID);
 		var userID = req.session.userID;

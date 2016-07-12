@@ -8,7 +8,6 @@ var teacherModel = require('../models/teacher');
 router.get('/',common.isLogin,function(req, res, next) {
 	common.isTeacher(req,res,next,function(){
 		var userID = req.session.userID;
-		req.session.userID = '1001';
 		if(userID){
 			teacherModel.queryInfo(userID,function(result){
 				req.session.teacherName = result.data[0].teacherName;
@@ -31,7 +30,11 @@ router.get('/course',common.isLogin,function(req,res,next){
 				var courseID = result1.data[0].courseID;
 				teacherModel.studentList(userID,courseID,function(result){
 					var result2 = result;
-					res.render('teacher/course',{status:1,course:result1,student:result2,name:req.session.teacherName,page:'course'});
+					if(result2.data  || result.data ){
+						res.render('teacher/course',{status:1,course:result1,student:result2,name:req.session.teacherName,page:'course'});
+					}else{
+						res.render('teacher/course',{status:0,course:result1,student:result2,name:req.session.teacherName,page:'course'});
+					}
 				})
 			})
 			

@@ -137,19 +137,19 @@ $(document).ready(function () {
            noticeCode.html(data.info);
             cdiv.attr('errr',''); 
             layer.closeAll(); 
-            location.reload(); 
+            // location.reload(); 
           }else if(data.status == -1){
             //用户名错误
             noticeUsername.html(data.info);
             udiv.attr('errr', '');         
             layer.closeAll();     
-            location.reload();                    
+            // location.reload();                    
           }else if(data.status == -2){
             //密码错误
             noticePassword.html(data.info);
             pdiv.attr('errr', '');         
             layer.closeAll();  
-            location.reload();                       
+            // location.reload();                       
           }
     })
   }

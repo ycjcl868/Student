@@ -14,9 +14,10 @@
 
 
         <div class="panel-heading">
-          <h3 class="panel-title"><i class="fa fa-graduation-cap"></i>选修<strong><%= student.data[0].courseName%></strong>课程的学生</h3>
+          <h3 class="panel-title"><i class="fa fa-graduation-cap"></i>选修
+          <% if(status > 0){ %><strong><%= student.data[0].courseName%>  </strong><% } %>课程的学生</h3>
         </div>
-        <input type="hidden" id="courseID" value="<%= student.data[0].courseID%>">
+        <input type="hidden" id="courseID" value="<% if(status > 0){ %><%= student.data[0].courseID%><% } %>">
         <div class="panel-body">
 			<table class="table table-hover course-table table-striped">
 		      <thead>
@@ -29,18 +30,20 @@
 		        </tr>
 		      </thead>
 		      <tbody id="tbody">
-		      <% for(var i = 0; i < student.data.length;i++) { %>
-		      	<tr>
-		      		<th><%= student.data[i].studentID %></th>
-		      		<td><%= student.data[i].studentName %></td>
-		      		<td><%= student.data[i].major %></td>
-		      		<td><% if(student.data[i].grade>0) { %><%=student.data[i].grade%><% }else{ %><input type="number" class="grade"><% } %></td>
-		      		<td>
-		      		<% if(student.data[i].grade>0) { %><button type="button" class="btn btn-danger" disabled="disabled">已保存</button><% }else{ %><button type="button" class="btn btn-primary addgrade-btn">确认保存</button><% } %>
-		      		
-		      		</td>
-		      	</tr>
-		      <% } %>
+		      <% if(status > 0) { %>
+			      <% for(var i = 0; i < student.data.length;i++) { %>
+			      	<tr>
+			      		<th><%= student.data[i].studentID %></th>
+			      		<td><%= student.data[i].studentName %></td>
+			      		<td><%= student.data[i].major %></td>
+			      		<td><% if(student.data[i].grade>0) { %><%=student.data[i].grade%><% }else{ %><input type="number" class="grade"><% } %></td>
+			      		<td>
+			      		<% if(student.data[i].grade>0) { %><button type="button" class="btn btn-danger" disabled="disabled">已保存</button><% }else{ %><button type="button" class="btn btn-primary addgrade-btn">确认保存</button><% } %>
+			      		
+			      		</td>
+			      	</tr>
+			      <% } %>
+			    <% } %>
 		      </tbody>
 		    </table>
         </div>

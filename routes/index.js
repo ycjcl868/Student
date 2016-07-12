@@ -37,6 +37,7 @@ router.get('/', function(req, res, next) {
 router.get('/login',function(req,res,next){
 	if(req.session.userID){
 		common.isWho(req,res,next,function(result){
+			console.log(result);
 			if(result === 'student'){
 				res.redirect('/student');
 			}else if(result === 'teacher'){
