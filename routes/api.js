@@ -45,8 +45,6 @@ router.post('/resetPass',common.isLogin,function(req,res,next){
  *  用户验证码正确与否
  */
 router.post('/authcode',function(req,res,next){
-	// var username = req.body.username;
-	// var password = req.body.password;
 	var usercode = req.body.usercode;
 	var authcode = req.session.authcode;
 	console.log(usercode);
@@ -56,17 +54,6 @@ router.post('/authcode',function(req,res,next){
 	}else{
 		res.json({status:0,info:"验证码错误"});
 	}
-
-	// if(username && password){
-	// 	commonModel.login(username,password,usercode,authcode,function(results){
-	// 		if(results.status === 1){
-	// 			req.session.userID = results.userID;
-	// 		}
-	// 		res.json(results);
-	// 	});
-	// }else{
-	// 	res.json({status:0,info:"参数错误"});
-	// }
 });
 
 router.post('/login',function(req,res,next){
@@ -105,20 +92,6 @@ router.post('/chooseCourse',common.isLogin,function(req,res,next){
 
 	})
 })
-
-
-
-
-/**
- * 非ajax退出登陆
- */
-// router.post('/loginout',common.isLogin,function(req,res,next){
-// 	req.session.userID = '';
-// 	if(!req.session.userID){
-// 		res.json({status:0,info:'退出登陆'});		
-// 	}
-	
-// });
 
 /**
  * 登分操作

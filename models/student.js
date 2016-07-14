@@ -1,10 +1,10 @@
-//连接数据库
+//数据库模块
 var mysql = require('mysql');
 var config = require('../conf/db');
-//md5加密
+//md5加密模块
 var crypto = require('crypto');
 
-
+//连接数据库
 var connection = mysql.createConnection(config.database);
 connection.connect();
 
