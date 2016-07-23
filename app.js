@@ -56,8 +56,8 @@ app.use(function(req, res, next) {
   
 });
 
-app.listen(2438,function(){
-  console.log('服务启动：http://localhost:2438');
+app.listen(3003,function(){
+  console.log('服务启动：http://localhost:3003');
 })
 
 // error handlers
