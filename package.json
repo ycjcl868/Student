@@ -14,7 +14,7 @@
     "express": "~4.16.0",
     "express-session": "^1.13.0",
     "moment": "^2.14.1",
-    "morgan": "~1.6.1",
+    "morgan": "~1.9.1",
     "serve-favicon": "~2.4.5"
   }
 }
